@@ -1,0 +1,73 @@
+:root {
+	font-size: 16px;
+	font-family: 'Arial', 'sans-serif';
+}
+
+body {
+	text-align: center;
+}
+
+.sign-up-form {
+	display: inline-block;
+	width: 25rem;
+}
+
+.sign-up-form div {
+	margin: 0.5rem;
+	/* width: 500px; */
+	display: flex;
+}
+
+
+
+label {
+	display: flex;
+	align-items: center;
+}
+
+select {
+	width: 4rem;
+	height: 2rem;
+}
+
+.red-star {
+	color: red;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	margin-right: 0.75rem;
+}
+
+input {
+	text-transform: uppercase;
+	border-radius: 0.5rem;
+	border: solid 1px lightgray;
+	height: 1.5rem;
+}
+
+*:invalid {
+	border-color: red;
+}
+
+
+.row {
+	display: flex;
+	flex-direction: column;
+	padding: 0.3rem;
+	margin: 0.3rem;
+}
+
+#grade {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.radio-button-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.agree {
+	display: flex;
+	flex-direction: row;
+}

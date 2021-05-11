@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CAPSTONE</title>
+	<!-- The X-UA-Compatible meta tag is specifically for HTAs -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link type="image/x-icon" rel="icon" href="assets/icons/capstone.ico">
+	<link type="text/css" rel="stylesheet" href="stylesheets/style.css">
+	<!-- This script has limited functionality of a web browser console. (Press F12 to access) -->
+	<script type="text/javascript" src="scripts/console.log.js"></script>
+</head>
+<body>
+
+<div id="signup-wrapper">
+<h1 id="title">
+	Sign Up
+</h1>
+<div class="form-wrapper">
+	<div class="sign-up-form">
+		<div class="row">
+			<label for="f-name">
+				<span class="red-star">*</span>First Name
+			</label>
+			<input type="text" id="f-name" name="f-name" required>
+		</div>
+		<div class="row">
+			<label for="">
+				<span class="red-star">*</span>Last Name
+			</label>
+			<input type="text" id="l-name" name="l-name" required>
+		</div>
+		<div class="row">
+			<label for="phone-number">
+				<span class="red-star">*</span>Phone Number
+			</label>
+			<input type="tel" id="phone-number" name="phone-number"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+			<div class="example">
+				123-456-7890
+			</div>
+		</div>
+		<div class="row rank-wrapper">
+			<label for="rank-select">
+				<span class="red-star">*</span>Select your Rank
+			</label>
+			<div class="rank-grade-wrap">
+				<div id="grade">
+					<div class="radio-button-wrapper">
+						<label for="officer">
+							O
+						</label>
+						<input type="radio" id="officer" name="rank-type" value="O" onclick="makeRankNumbers(1)">
+					</div>
+					<div class="radio-button-wrapper">
+						<label for="warrant">
+							W
+						</label>
+						<input type="radio" id="warrant" name="rank-type" value="W" onclick="makeRankNumbers(2)">
+					</div>
+					<div class="radio-button-wrapper">
+						<label for="enlisted">
+							E
+						</label>
+						<input type="radio" id="enlisted" name="rank-type" value="E" onclick="makeRankNumbers(3)">
+					</div>
+					<div class="radio-button-wrapper">
+						<label for="civilian">
+							Civ
+						</label>
+						<input type="radio" id="civilian" name="rank-type" value="Civ" onclick="makeRankNumbers(4)">
+					</div>			
+				</div>
+				<div class="rank">
+					<select name="rank" id="rank-number-select" name="rank">
+						<option value="">--</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<label for="email">
+				<span class="red-star">*</span>Email address
+			</label>
+			<input type="email" id="email" name="email" required>
+		</div>
+		<div class="agree row">
+			<input type="checkbox" id="agree" name="agree" required>
+			<label for="agree">
+				I agree
+			</label>
+		</div>
+		<button id="submit-button" name="submit-button" onclick="submitForm()">
+			Submit
+		</button>
+	</div>
+
+</div>
+
+
+
+</body>
+<script type="text/javascript" src="scripts/script.js"></script>
+</html>

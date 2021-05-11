@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Console Log</title>
+<meta http-equiv="Content-Type" content="text/html" charset=utf-8>
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+<script language="javascript">
+var w = 1200;
+var h = 800
+window.resizeTo (w,h);
+window.moveTo ((screen.availWidth - w) / 2, (screen.availHeight - h) / 2); // Centered
+</script>
+<HTA:APPLICATION
+	WINDOWSTATE="maximize"
+/>
+</head>
+<body style="font-family:sans-serif;font-size:16px">
+	<b>Console Log</b><hr>
+	<div id="consoleLog"></div>
+</body>
+<script language="javascript">
+var consoleLogFSO = new ActiveXObject('Scripting.FileSystemObject');
+var consoleLogFSOFile;
+var consoleLogPath = "C:\\Users\\gregg\\Desktop\\Capstone\\code\\console.log";
+getConsoleLog();
+function getConsoleLog() {
+	var consoleLog = "";
+	try {
+		consoleLogFSOFile = consoleLogFSO.OpenTextFile(consoleLogPath, 1, true);
+		while(!consoleLogFSOFile.AtEndOfStream) {
+			var line = consoleLogFSOFile.ReadLine();
+			if (line.indexOf('Error:') > -1) {
+				line = '<font color="red">' + line + '</font>';
+			}
+			consoleLog += line + '<br>';
+		}
+		consoleLogFSOFile.Close();
+		if (consoleLog != document.querySelector('#consoleLog').innerHTML) {
+			document.querySelector('#consoleLog').innerHTML = consoleLog;
+		}
+	} catch(error) {}
+	var scanning = setTimeout(getConsoleLog, 1000);
+}
+</script>
+</html>
